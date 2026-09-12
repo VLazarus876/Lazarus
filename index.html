@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="auth.css" />
   </head>
   <body>
     <header class="site-header">
@@ -103,12 +104,22 @@
       </section>
     </main>
 
-    <footer class="site-footer section-shell"><span>© 2026 Vaughn Lazarus</span><span>Systems · Networks · Cloud</span><a href="https://www.linkedin.com/in/vaughn-lazarus/" target="_blank" rel="noreferrer">LinkedIn ↗</a></footer>
+    <footer class="site-footer section-shell">
+      <span>© 2026 Vaughn Lazarus</span>
+      <span>Systems · Networks · Cloud</span>
+      <a href="https://www.linkedin.com/in/vaughn-lazarus/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <span class="owner-auth" aria-live="polite">
+        <button id="google-sign-in" type="button">Owner sign-in</button>
+        <button id="google-sign-out" type="button" hidden>Sign out</button>
+        <span id="auth-status"></span>
+      </span>
+    </footer>
     <script>
       const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.site-nav');
       toggle.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') === 'true'; toggle.setAttribute('aria-expanded', String(!open)); nav.classList.toggle('is-open', !open); });
       nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => { toggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); }));
     </script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

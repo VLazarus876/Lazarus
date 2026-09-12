@@ -1,0 +1,27 @@
+.owner-auth {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.owner-auth button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--teal);
+  cursor: pointer;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+.owner-auth button:hover {
+  color: var(--clay);
+}
+
+.owner-auth #auth-status {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
